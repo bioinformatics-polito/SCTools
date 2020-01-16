@@ -17,7 +17,8 @@ wget --output-document=input.bam	\
 wget --output-document=barcodes.csv	\
      http://cf.10xgenomics.com/samples/cell-dna/1.1.0/breast_tissue_A_2k/breast_tissue_A_2k_per_cell_summary_metrics.csv
 
-# Run the de-multiplexer
+# Create the output directory and run the de-multiplexer
+mkdir output
 sctools_demultiplex --barcodes-csv barcodes.csv	\
 		    --forbidden-tags XA,SA 	\
 		    --min-mapq 30 		\
